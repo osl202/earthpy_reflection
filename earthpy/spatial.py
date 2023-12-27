@@ -626,7 +626,7 @@ def hillshade(arr, azimuth=30, altitude=30):
 
     return 255 * (shaded + 1) / 2
 
-def hillshade(arr, azimuth=30, altitude=30):
+def hillshade_reflection(arr, azimuth=30, altitude=30):
     """Create hillshade from a numpy array containing elevation data.
 
     Parameters
@@ -689,7 +689,7 @@ def hillshade(arr, azimuth=30, altitude=30):
         altituderad
     ) * np.cos(slope) * np.cos((azimuthrad - np.pi / 2.0) - aspect)
 
-    return slope
+    return slope*180.0/np.pi
 
 
 def crs_check(path):
